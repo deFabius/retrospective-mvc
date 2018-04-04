@@ -1,0 +1,47 @@
+﻿@using retrospective_meeting.Models.BoardViewModels
+@using System.Collections.Generic
+@model BoardViewModel
+
+@{
+    ViewData["Title"] = "Board";
+}
+
+<div class="WhiteBoard">
+    <div class="WhiteBoard-sector" id="didWell">
+        <h3>What we did well</h3>
+        <ul>
+            @foreach (var postIt in Model.WhatWeDidWellSection)
+            {
+                <li><a class="post-it-note">@postIt.Content</a></li>
+            }
+        </ul>
+    </div>
+    <div class="WhiteBoard-sector" id="canDoBetter">
+        <h3>What can we do better</h3>
+        <ul>
+            @foreach (var postIt in Model.WhatCanWeDoBetterSection)
+            {
+                <li><a class="post-it-note">@postIt.Content</a></li>
+            }
+        </ul>
+    </div>
+    <div class="WhiteBoard-sector" id="puzzledUs">
+        <h3>What puzzled us</h3>
+        <ul>
+            @foreach (var postIt in Model.WhatPuzzledUsSection)
+            {
+                <li><a class="post-it-note">@postIt.Content</a></li>
+            }
+        </ul>
+    </div>
+    <div class="WhiteBoard-sector" id="tryNext">
+        <h3>What can we try next</h3>
+        <ul>
+            @foreach (var postIt in Model.WhatCanWeTryNextSection)
+            {
+                <li><a class="post-it-note">@postIt.Content</a></li>
+            }
+        </ul>
+    </div>
+    <a href="NewCard" class="board-interface">+</a>
+</div>
